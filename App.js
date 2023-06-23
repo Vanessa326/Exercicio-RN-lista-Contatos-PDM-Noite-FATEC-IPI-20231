@@ -11,11 +11,7 @@ import {
 export default function App() {
   const [nome, setNome] = useState('');
   const [telefone, setTelefone] = useState('');
-  const [contatos, setContatos] = useState([{name: 'Joao',
-      tel: '35625458'  
-  }, {name: 'Joao',
-  tel: '35625458'  
-}]);
+  const [contatos, setContatos] = useState([]);
   
   const capturarNome = (nomeDigitado) => {
     setNome(nomeDigitado)}
@@ -23,12 +19,16 @@ export default function App() {
   const capturarTel = (telDigitado) => {
       setTelefone(telDigitado)}
 
-  
+  var cont = 0
   const adicionarContato = () =>  {
-    const teste = {name: nome, tel: telefone}
-    const aux = [...contatos, teste];
+    const aux = contatos.push([nome,telefone]);
+    
     setContatos(aux);
+
     console.log(contatos)
+
+    setNome('')
+    setTelefone('')
   }
   
   
