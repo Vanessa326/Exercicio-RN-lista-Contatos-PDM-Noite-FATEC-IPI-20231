@@ -20,10 +20,11 @@ export default function App() {
       setTelefone(telDigitado)}
 
   var cont = 0
+
   const adicionarContato = () =>  {
-    const aux = contatos.push([nome,telefone]);
+    const aux1 = {"name": nome, "tel": telefone}
+    setContatos(contatos.push(aux1))
     
-    setContatos(aux);
 
     console.log(contatos)
 
